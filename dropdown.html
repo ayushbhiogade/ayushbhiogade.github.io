@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dropdown Menu</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #eee;
+	font-size: 16px;
+	font-family: sans-serif,arial;
+}
+header{
+	width: 1000px;
+	height: 120px;
+	margin: 0 auto;
+	position: relative;
+}
+.logo{
+	position: absolute;
+	left: 20px;
+	top: 30px;
+}
+.nav{
+	width: 1000px;
+	height: 60px;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+ul li{
+	list-style: none;
+	width: 200px;
+	line-height: 60px;
+	position: relative;
+	background: #222;
+	box-shadow: 0px 2px 5px 0px grey;
+	text-align: center;
+	float: left;
+	background: linear-gradient(darkred 20%,black 80%);
+}
+ul li ul{
+	position: absolute;
+}
+.nav > ul > li:nth-of-type(1){
+	border-radius: 5px 0px 0px 5px;
+}
+.nav > ul > li:nth-of-type(5){
+	border-radius: 0px 5px 5px 0px;
+}
+ul li a{
+	color: #fff;
+	width: 200px;
+	height: 58px;
+	display: inline-block;
+	text-decoration: none;
+}
+ul li a:hover{
+	font-weight: bold;
+	border-bottom: 2px solid #fff;
+}
+ul li ul{
+	display: none;
+}
+.nav ul li:hover ul{
+	display: block;
+}
+.fa{
+	margin-right: 5px;
+}
+.fa-list.modify{
+	display: none;
+	font-size: 35px;
+	position: absolute;
+	right: 30px;
+	top:60px;
+	cursor: pointer;
+}
+.container{
+	width: 1000px;
+	height: 200px;
+	margin: 0 auto;
+	padding:20px 20px;
+}
+@media screen and (max-width: 480px){
+	header{
+		width: 100%;
+	}
+	.nav{
+		display: none;
+		width: 100%;
+		height: auto;
+	}
+	ul li{
+		width: 100%;
+		float: none;
+	}
+	ul li a{
+		width: 100%;
+		display: block;
+	}
+	ul li ul{
+		position: static;
+	}
+	ul li ul li a{
+		background: #222;
+	}
+	.fa-list.modify{
+		display: block;
+	}
+	.container{
+		width: 100%;
+		height: auto;
+	}
+	body{
+		overflow-x:hidden;
+	}
+}
+</style>
+<body>
+
+<header>
+	<div class="logo"><img src="2.jpeg"height="90" width="300"></div>
+	<div class="menu"><span class="fa fa-list modify"></span></div>
+</header>
+<nav class="nav">
+	<ul>
+		<li><a href="dropdown.html"><span class="fa fa-home"></span>Home</a></li>
+		<li><span class="fa fa-code"></span>Code</a>
+			<ul>
+				<li><a href="javascript.html">JavaScript</a></li>
+				<li><a href="html.html">HTML</a></li>
+				<li><a href="css.html">CSS</a></li>
+				<li><a href="vb.html">Visual Basic</a></li>
+    				<li><a href="cp.html">C++</a></li>
+				<li><a href="python.html">Python</a></li>
+				<li><a href="php.html">PHP</a></li>
+				<li><a href="cs.html">C#</a></li>
+				<li><a href="perl.html">Perl</a></li>
+			</ul>
+		</li>
+		<li><a href="contact.html"><span class="fa fa-list"></span>Contact</a></li>
+		<li><a href="#"><span class="fa fa-info"></span>About</a></li>
+	</ul>
+</nav>
+
+<section class="container">
+<p><i>"Everybody in this world should learn how to program a computer because it teaches you how to think"</i></p>
+</section>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	var menu = false;
+	$(".fa-list.modify").click(function(){
+		if(menu == false){
+			$(".nav").fadeIn();
+			menu = true;
+		}else{
+			$(".nav").fadeOut();
+			menu = false;
+		}
+	})	
+
+</script>
